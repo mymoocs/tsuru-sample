@@ -1,0 +1,45 @@
+name:           parse-pcap
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/arthurvard/parse-pcap#readme>
+homepage:       https://github.com/arthurvard/parse-pcap#readme
+bug-reports:    https://github.com/arthurvard/parse-pcap/issues
+author:         Arthur Vardanyan
+maintainer:     arthur@datasfer.com
+copyright:      2018 Arthur Vardanyan
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+cabal-version:  >= 1.10
+extra-source-files:
+    ChangeLog.md
+    README.md
+
+source-repository head
+  type: git
+  location: https://github.com/arthurvard/parse-pcap
+
+library
+  exposed-modules: Lib
+  other-modules: Paths_parse_pcap
+  hs-source-dirs: src
+  build-depends: base >=4.7 && <5
+  default-language: Haskell2010
+
+executable parse-quote
+  main-is: Main.hs
+  other-modules: Paths_parse_pcap
+  hs-source-dirs: app
+  ghc-options: -Wall -Werror -threaded -rtsopts -with-rtsopts=-N
+  build-depends: base >=4.7 && <5
+               , parse-pcap
+  default-language: Haskell2010
+
+test-suite parse-pcap-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules: Paths_parse_pcap
+  hs-source-dirs: test
+  ghc-options: -Wall -Werror -threaded -rtsopts -with-rtsopts=-N
+  build-depends: base >=4.7 && <5
+               , parse-pcap
+  default-language: Haskell2010
