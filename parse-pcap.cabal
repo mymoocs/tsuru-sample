@@ -23,6 +23,10 @@ library
   other-modules: Paths_parse_pcap
   hs-source-dirs: src
   build-depends: base >=4.7 && <5
+               , binary
+               , bytestring
+               , time
+
   default-language: Haskell2010
 
 executable parse-quote
@@ -32,6 +36,7 @@ executable parse-quote
   ghc-options: -Wall -Werror -threaded -rtsopts -with-rtsopts=-N
   build-depends: base >=4.7 && <5
                , parse-pcap
+               , optparse-applicative >=0.14
   default-language: Haskell2010
 
 test-suite parse-pcap-test

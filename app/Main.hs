@@ -1,6 +1,8 @@
 module Main where
 
-import Lib
+import           Lib
+import           Options.Applicative ()
+
 
 main :: IO ()
 main = someFunc
